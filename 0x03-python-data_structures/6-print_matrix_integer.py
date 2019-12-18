@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    if (matrix is None):
+    for x in matrix:
+        s = ""
+        for y in x:
+            print("{:s}{:d}".format(s, y), end='')
+            s = " "
         print()
-    else:
-        for i in range(len(matrix)):
-            print("{}".format(matrix[i]))
