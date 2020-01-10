@@ -41,6 +41,8 @@ class Square:
                 for t in range(len(value)):
                     if (value[t] < 0):
                         raise TypeError(s)
+                    if (type(value[t]) is not int):
+                        raise TypeError(S)
             self.__position = value
         else:
             raise TypeError(s)
