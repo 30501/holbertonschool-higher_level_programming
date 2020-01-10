@@ -39,7 +39,7 @@ class Square:
                 raise TypeError(s)
             else:
                 for t in range(len(value)):
-                    if (value[i] < 0):
+                    if (value[t] < 0):
                         raise TypeError(s)
             self.__position = value
         else:
