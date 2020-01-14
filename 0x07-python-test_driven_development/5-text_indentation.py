@@ -8,7 +8,7 @@ def text_indentation(text):
     """  function that prints a text with 2 new lines after
     each of these characters: ., ?
     """
-    if not (isinstance(text, str) or text is None or len(text) < 0):
+    if (type(text) is not str or text is None):
         raise TypeError("text must be a string")
     flag = 0
     for c in text:
