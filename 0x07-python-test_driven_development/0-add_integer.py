@@ -2,8 +2,7 @@
 """
 Returns an integer: the addition of a and b
 This function validates the type int or float
-Otherwise, raise error
-Cast values too
+Otherwise, raise error, Cast values too
 """
 
 
