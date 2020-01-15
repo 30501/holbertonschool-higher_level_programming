@@ -11,6 +11,7 @@ class Rectangle:
     print_symbol = '#'
 
     def __init__(self, width=0, height=0):
+        """ Constructor """
         self.__width = width
         self.__height = height
         type(self).number_of_instances += 1
@@ -68,22 +69,21 @@ class Rectangle:
 
     def perimeter(self):
         """ Public instance method that returns the rectangle perimeter """
-        if (self.__width != 0 or self.__height != 0):
-            return ((self.__width + self.__height) * 2)
-        else:
+        if (self.__width == 0 or self.__height == 0):
             return (0)
+        return (2 * (self.__width + self.__height))
 
     def __str__(self):
         """ magic method that print the rectangle with the character # """
         string = ""
-        if (self.__width != 0 or self.__height != 0):
+        if (self.__width == 0 or self.__height == 0):
+            return (string)
+        else:
             for x in range(self.__height):
                 for y in range(self.__width):
                     string += str(self.print_symbol)
                 string += "\n"
             string = string[:-1]
-            return (string)
-        else:
             return (string)
 
     def __repr__(self):
