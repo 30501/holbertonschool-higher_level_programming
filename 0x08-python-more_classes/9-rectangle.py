@@ -29,12 +29,6 @@ class Rectangle:
         else:
             return (rect_2)
 
-    @classmethod
-    def square(cls, size=0):
-        """ Class method that returns a new Rectangle instance
-        with width == height == size """
-        return (cls(size, size))
-
     @property
     def width(self):
         """ Retrieve the width of rectangle """
@@ -99,3 +93,9 @@ class Rectangle:
         and print a message """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
+
+    @classmethod
+    def square(cls, size=0):
+        """ Class method that returns a new Rectangle instance
+        with width == height == size """
+        return cls(size, size)
