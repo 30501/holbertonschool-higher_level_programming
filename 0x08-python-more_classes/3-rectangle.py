@@ -52,12 +52,12 @@ class Rectangle:
     def __str__(self):
         """ magic method that print the rectangle with the character # """
         string = ""
-        if (self.__width != 0 or self.__height != 0):
+        if (self.__width == 0 or self.__height == 0):
+            return (string)
+        else:
             for x in range(self.__height):
                 for y in range(self.__width):
                     string += "#"
                 string += "\n"
             string = string[:-1]
-            return (string)
-        else:
             return (string)
