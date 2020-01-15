@@ -7,6 +7,7 @@ Class Rectangle: Defines a Rectangle
 class Rectangle:
     """ class that defines a Rectangle with attributes and public methods"""
     def __init__(self, width=0, height=0):
+        """ Initializes instances """
         self.width = width
         self.height = height
 
@@ -44,7 +45,6 @@ class Rectangle:
 
     def perimeter(self):
         """ Public instance method that returns the rectangle perimeter """
-        if (self.__width != 0 or self.__height != 0):
-            return ((self.__width * 2) + (self.__height * 2))
-        else:
+        if (self.__width == 0 or self.__height == 0):
             return (0)
+        return (2 * (self.__width + self.__height))
