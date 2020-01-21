@@ -19,4 +19,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Calling parent method str() """
-        return (super().__str__())
+        return "[Square] " + str(self.__size) + "/" + str(self.__size)
