@@ -42,8 +42,8 @@ class Square(Rectangle):
     """ class Square that inherits from Rectangle (9-rectangle.py) """
     def __init__(self, size):
         """ Constructor maping size to parent constructor"""
+        self.integer_validator("size", size)
         self.__size = size
-        self.integer_validator("size", self.__size)
         super().__init__(self.__size, self.__size)
 
     def area(self):
