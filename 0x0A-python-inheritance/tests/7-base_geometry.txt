@@ -54,3 +54,55 @@ Validate integer_validator
 	 Traceback (most recent call last):
   	 ...
 	 TypeError: name must be an integer
+
+Boolean type
+
+	 >>> bg.integer_validator("name", True)
+    	 Traceback (most recent call last):
+    	 ...
+    	 TypeError: name must be an integer
+
+List type
+
+	 >>> bg.integer_validator("Test", [3])
+    	 Traceback (most recent call last):
+    	 ...
+    	 TypeError: Test must be an integer
+
+Tuple type
+
+         >>> bg.integer_validator("Test", (4, ))
+    	 Traceback (most recent call last):
+    	 ...
+    	 TypeError: Test must be an integer
+
+Set type
+
+	 >>> bg.integer_validator("Test", {3, 4})
+    	 Traceback (most recent call last):
+    	 ...
+    	 TypeError: Test must be an integer
+
+Dict type
+
+         >>> bg.integer_validator("Test", {1: 2})
+    	 Traceback (most recent call last):
+    	 ...
+    	 TypeError: Test must be an integer
+
+with None
+
+         >>> bg.integer_validator("Test", None)
+    	 Traceback (most recent call last):
+    	 ...
+    	 TypeError: Test must be an integer
+
+	 >>> bg.integer_validator()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	 >>> bg.integer_validator(1)
+	 Traceback (most recent call last):
+ 	 ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
