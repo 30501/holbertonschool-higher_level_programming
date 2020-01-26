@@ -9,6 +9,17 @@ class Square(Rectangle):
         """ Constructor """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """ Retriebe the size of square """
+        return (self.width)
+
+    @size.setter
+    def size(self, value):
+        """ set passet private attribute of size """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """ overriding the __str__ method that returns a custom string """
         mssg = "[Square] ({:d}) {:d}/{:d} - {:d}"\
