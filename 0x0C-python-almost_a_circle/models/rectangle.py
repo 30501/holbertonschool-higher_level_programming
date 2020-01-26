@@ -88,3 +88,12 @@ class Rectangle(Base):
         mssg = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"\
             .format(self.id, self.x, self.y, self.width, self.height)
         return (mssg)
+
+    def update(self, *args):
+        """ Method that assigns an argument to each attribute """
+        arlist = ["id", "width", "height", "x", "y"]
+        for arl in range(len(args)):
+            if (arl == 0):
+                super().__init__(args[arl])
+            elif (arl < len(arlist)):
+                setattr(self, arlist[arl], args[arl])
