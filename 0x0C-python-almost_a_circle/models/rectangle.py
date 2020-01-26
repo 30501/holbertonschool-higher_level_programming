@@ -89,11 +89,19 @@ class Rectangle(Base):
             .format(self.id, self.x, self.y, self.width, self.height)
         return (mssg)
 
-    def update(self, *args):
-        """ Method that assigns an argument to each attribute """
+    def update(self, *args, **kwargs):
+        """ Method that assigns an argument to each attribute
+        by Non-keyword and key/value"""
         arlist = ["id", "width", "height", "x", "y"]
-        for arl in range(len(args)):
-            if (arl == 0):
-                super().__init__(args[arl])
-            elif (arl < len(arlist)):
-                setattr(self, arlist[arl], args[arl])
+        if (args and len(args) != 0):
+            for arl in range(len(args)):
+                if (arl == 0):
+                    super().__init__(args[arl])
+                elif (arl < len(arlist)):
+                    setattr(self, arlist[arl], args[arl])
+        else:
+            for key, value in kwargs.items():
+                if (key == 'id'):
+                    super().__init__(value)
+                else:
+                    setattr(self, key, value)
