@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base class of all other classes in this project"""
 import json
+import os
 
 
 class Base:
@@ -54,3 +55,16 @@ class Base:
             dummy = cls(3)
         dummy.update(**dictionary)
         return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances """
+        my_list = []
+        fname = cls.__name__ + '.json'
+        if os.path.isfile(fname):
+            with open(fname, 'r') as f:
+                stread = f.read()
+                listjson = cls.from_json_string(stread)
+                for l in listjson:
+                    my_list.append(cls.create(**l))
+        return (my_list)
