@@ -8,5 +8,5 @@ INNER JOIN tv_show_genres it
 ON tvg.id = it.genre_id
 INNER JOIN tv_shows tvs
 ON tvs.id = it.show_id
-WHERE tvs.id = 8
+WHERE tvs.title = 'Dexter'
 ORDER BY tvg.name ASC;
