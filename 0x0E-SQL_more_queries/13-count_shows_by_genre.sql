@@ -4,7 +4,7 @@
 -- Second column must be called number_of_shows
 -- Don’t display a genre that doesn’t have any shows linked
 -- Results must be sorted in descending order by the number of shows linked
-SELECT tvg.name, COUNT(*) AS number_of_shows
+SELECT tvg.name AS genre, COUNT(*) AS number_of_shows
 FROM tv_genres tvg
 INNER JOIN tv_show_genres it
 ON tvg.id = it.genre_id
