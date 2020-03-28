@@ -10,7 +10,7 @@ if __name__ == "__main__":
                            db=argv[3], port=3306)
     cur = conn.cursor()
     cur.execute("SELECT id, name FROM states WHERE name LIKE 'N%' \
-                 COLLATE latin1_general_cs ORDER BY id ASC;")
+                 ORDER BY id ASC;")
     query_rows = cur.fetchall()
 
     for row in query_rows:
