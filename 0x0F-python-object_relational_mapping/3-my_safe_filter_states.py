@@ -10,6 +10,7 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", user=argv[1], passwd=argv[2],
                            db=argv[3], port=3306, charset="utf8")
     cur = conn.cursor()
+    # , to the end of argv[4] because second paramether is a tuple
     cur.execute("SELECT * FROM states WHERE name = %s \
                  ORDER BY id ASC", (argv[4],))
     query_rows = cur.fetchall()
