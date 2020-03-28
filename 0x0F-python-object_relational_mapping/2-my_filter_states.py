@@ -10,7 +10,7 @@ if __name__ == "__main__":
                            db=argv[3], port=3306)
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE name = '{:s}' \
-                 ORDER BY id ASC".format(argv[4]))
+                 COLLATE latin1_general_cs ORDER BY id ASC".format(argv[4]))
 
     query_rows = cur.fetchall()
 
