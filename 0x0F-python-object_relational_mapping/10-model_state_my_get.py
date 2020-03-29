@@ -9,6 +9,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
+    aux = 0
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
@@ -16,12 +17,11 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # You can assume you have one record with the state name to search
-    find_state = session.query(State).filter(State.name == argv[4]).first()
-    session.close()
-
-    if (find_state is None):
+    for state in session.query(State).order_by(State.id).\
+            filter(State.name == argv[4]):
+        print("{}".format(state.id))
+        aux = 1
+    if (aux == 0):
         print("Not Found")
-    else:
-        print("{}".format(find_state.id))
 
-    # session.close()
+    session.close()
