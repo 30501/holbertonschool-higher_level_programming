@@ -17,11 +17,10 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # You can assume you have one record with the state name to search
-    for state in session.query(State).order_by(State.id).\
-            filter(State.name == argv[4]).all():
-        print("{}".format(state.id))
-        aux = 1
-    if (aux == 0):
-        print("Not Found")
-
+    state = session.query(State).filter(State.name == argv[4]).first()
     session.close()
+
+    if state is None:
+        print("Not found")
+    else:
+        print("{:d}".format(state.id))
