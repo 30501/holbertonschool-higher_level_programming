@@ -18,9 +18,10 @@ if __name__ == "__main__":
 
     # You can assume you have one record with the state name to search
     state = session.query(State).filter(State.name == argv[4]).first()
-    session.close()
 
     if state is None:
         print("Not found")
     else:
         print("{:d}".format(state.id))
+
+    session.close()
