@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # You can assume you have one record with the state name to search
     for state in session.query(State).order_by(State.id).\
-            filter(State.name == argv[4]):
+            filter(State.name == argv[4]).all():
         print("{}".format(state.id))
         aux = 1
     if (aux == 0):
