@@ -15,8 +15,8 @@ if __name__ == "__main__":
     try:
         json_body = req.json()
         if (len(json_body) != 0):
-            print("[{}] {}".format(json_bod['id'], json_bod['name']))
+            print("[{}] {}".format(json_body['id'], json_body['name']))
         else:
             print("No result")
-    except ValueError:
+    except:
         print("Not a valid JSON")
