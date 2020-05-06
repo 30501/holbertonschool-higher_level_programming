@@ -1,4 +1,4 @@
-v c#!/usr/bin/node
+#!/usr/bin/node
 // script that prints x times “C is fun”
 const arg = process.argv.slice(2);
 const argInt = parseInt(arg[0]);
